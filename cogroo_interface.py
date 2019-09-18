@@ -4,11 +4,16 @@ Created on Sat Sep  3 21:21:19 2016
 
 @author: Guilherme Passero <guilherme.passero0@gmail.com>
 """
+import inspect
+import os
+
 from py4j.java_gateway import JavaGateway
 from functools import lru_cache
 import logging
 import re
+import subprocess
 
+from retry import retry
 
 LOGGER = logging.getLogger(__name__)
 
@@ -188,12 +193,23 @@ class Mistake:
 class Cogroo:
 
     def __init__(self):
-        self.gateway = JavaGateway()
+        try:
+            self.gateway = JavaGateway(eager_load=True)
+        except:
+            cogroo_path = os.path.join(os.path.dirname(inspect.getfile(inspect.currentframe())), 'cogroo4py.jar')
+            run_command = ['java', '-jar', cogroo_path]
+            process = subprocess.Popen(run_command, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+            self.__start_gateway()
+
         self.analyzer = self.gateway.entry_point
         self.pos_tags = self._pos_tags()
         self.feat_tags = self._feat_tags()
         self.chunk_tags = self._chunk_tags()
         self.synchunk_tags = self._synchunk_tags()
+
+    @retry(tries=10, delay=1, backoff=2)
+    def __start_gateway(self):
+        self.gateway = JavaGateway(eager_load=True)
 
     @lru_cache(maxsize=5000)
     def analyze(self, text):
@@ -400,3 +416,12 @@ class Cogroo:
 
 
 cogroo = Cogroo.Instance()
+
+
+def main():
+    print(cogroo.lemmatize('o entendimento das metas propostas oferece uma interessante oportunidade para ' +
+                           'verificação do impacto na agilidade decisória'))
+
+
+if __name__ == '__main__':
+    main()
