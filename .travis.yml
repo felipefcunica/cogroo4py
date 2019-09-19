@@ -4,7 +4,8 @@ python:
 before_install:
   - sudo apt-get update
   - sudo apt-get install openjdk-8-jre
-  - update-java-alternatives -l
+#  - update-java-alternatives -l
+  - export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
   - java --version
 install:
   - pip install pytest-cov pytest
