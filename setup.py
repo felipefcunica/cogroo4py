@@ -2,7 +2,7 @@ from distutils.core import setup
 import setuptools
 
 setup(name='cogroo_interface',
-      version='0.3',
+      version='0.3.1',
       description='Interface for accessing CoGrOO from Python scripts using py4j',
       author='Guilherme Passero',
       author_email='guilherme.passero0@gmail.com',
