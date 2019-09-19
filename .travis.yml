@@ -1,9 +1,10 @@
 language: python
 python:
   - 3.6
-jdk:
-  - openjdk8
 before_install:
+  - sudo apt-get update
+  - sudo apt-get install openjdk-8-jre
+  - update-java-alternatives -l
   - java --version
 install:
   - pip install pytest-cov pytest
