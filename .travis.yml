@@ -6,8 +6,6 @@ jdk:
   - oraclejdk8
 install:
   - python3 setup.py install
-script:
-#  - pytest
 before_deploy:
   - python3 setup.py sdist
 deploy:
