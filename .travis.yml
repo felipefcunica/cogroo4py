@@ -6,6 +6,7 @@ jdk:
 install:
   - pip install pytest-cov pytest
 script:
+  - python setup.py install
   - py.test --cov-report term --cov=app/test/
 deploy:
   provider: pypi
