@@ -10,5 +10,6 @@ deploy:
   user: "$PYPI_USER"
   password:
     secure: "$PYPI_PASSWORD_SECURE"
+  skip_cleanup: false
   on:
     all_branches: true
