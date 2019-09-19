@@ -2,8 +2,12 @@ language: python
 python:
   - 3.6
   - pypi3
+install:
+  - python3 setup.py install
 script:
-  - pytest
+  - pytest:wq
+before_deploy:
+  - python3 setup.py sdist
 deploy:
   provider: pypi
   user: "PYPI_USER"
