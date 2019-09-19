@@ -1,0 +1,13 @@
+language: python
+python:
+  - 3.6
+  - pypi3
+script:
+  - pytest
+deploy:
+  provider: pypi
+  user: "PYPI_USER"
+  password:
+    secure: "PYPI_PASSWORD_SECURE"
+  on:
+    all_branches: true

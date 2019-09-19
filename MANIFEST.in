@@ -1,0 +1,2 @@
+include cogroo4py.jar
+exclude test.py
