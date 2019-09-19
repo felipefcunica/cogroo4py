@@ -3,6 +3,8 @@ python:
   - 3.6
 jdk:
   - openjdk8
+before_install:
+  - java --version
 install:
   - pip install pytest-cov pytest
 script:
