@@ -9,7 +9,7 @@ before_install:
 #  - sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java 1
 #  - sudo update-alternatives --config java
 #  - update-alternatives --config java /usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java
-  - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+  - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
   - hash -p "$JAVA_HOME/bin/java" java
   - java --version
 install:
