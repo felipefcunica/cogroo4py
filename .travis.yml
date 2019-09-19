@@ -6,8 +6,6 @@ jdk:
   - oraclejdk8
 install:
   - python3 setup.py install
-script:
-  - python3 setup.py sdist
 deploy:
   provider: pypi
   user: $PYPI_USER
