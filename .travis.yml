@@ -7,7 +7,7 @@ jdk:
 install:
   - python3 setup.py install
 script:
-  - pytest
+#  - pytest
 before_deploy:
   - python3 setup.py sdist
 deploy:
