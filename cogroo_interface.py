@@ -199,6 +199,8 @@ class Cogroo:
             cogroo_path = os.path.join(os.path.dirname(inspect.getfile(inspect.currentframe())), 'cogroo4py.jar')
             run_command = ['java', '-jar', cogroo_path]
             process = subprocess.Popen(run_command, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+            if process.returncode is not None:
+                raise EnvironmentError
             self.__start_gateway()
 
         self.analyzer = self.gateway.entry_point
