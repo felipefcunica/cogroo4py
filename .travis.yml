@@ -3,11 +3,12 @@ python:
   - 3.6
 before_install:
   - sudo apt-get update
-  - sudo apt-get install openjdk-8-jre
-#  - update-java-alternatives -l
+  - sudo apt-get install openjdk-8-jdk
+  - update-java-alternatives -l
   - sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java 1
+  - sudo update-alternatives --config java
 #  - update-alternatives --config java /usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java
-  - export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+#  - export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
   - java --version
 install:
   - pip install pytest-cov pytest
