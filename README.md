@@ -1,4 +1,6 @@
 # CoGrOO4Py
+[![Build Status](https://travis-ci.org/kevencarneiro/cogroo4py.svg?branch=master)](https://travis-ci.org/kevencarneiro/cogroo4py)
+
 Uma interface para acessar o analisador morfológico e o corretor gramatical do CoGrOO em Python.
 
 # Pré-requisitos
