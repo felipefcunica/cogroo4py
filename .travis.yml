@@ -3,12 +3,12 @@ python:
   - 3.6
 jdk:
   - oraclejdk8
-install:
+script:
   - python3 setup.py install
 deploy:
   provider: pypi
-  user: $PYPI_USER
+  user: "$PYPI_USER"
   password:
-    secure: $PYPI_PASSWORD_SECURE
+    secure: "$PYPI_PASSWORD_SECURE"
   on:
     all_branches: true
