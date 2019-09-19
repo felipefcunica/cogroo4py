@@ -18,14 +18,9 @@ Se preferir, instale a partir do GitHub pelo pip:
     pip install git+https://github.com/gpassero/cogroo4py.git
 ```
 
-É necessário executar o arquivo **cogroo4py.jar** para ativar o Socket que permitirá a comunicação do Python com a JVM através do py4j. Todos os componentes do CoGrOO 4 necessários já estão nesse pacote.
+É necessário que o executável `java` esteja definido em seu `path`
 
-```
-    java -jar cogroo4py.jar
-    Gateway Server Started
-```
-
-Após isso, em uma IDE Python de sua preferência (ex. IPython, Spyder), importe e instancie a classe *Cogroo*.
+Em uma IDE Python de sua preferência (ex. IPython, Spyder), importe e instancie a classe *Cogroo*.
 
 ```python
     from cogroo_interface import Cogroo
