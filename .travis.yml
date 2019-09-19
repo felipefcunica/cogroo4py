@@ -2,25 +2,6 @@ language: python
 python:
   - 3.6
 before_install:
-  - /
-    local file version versions=()
-    for file in /usr/lib/jvm/.*.jinfo; do
-    [[ -e $file ]] || continue
-    version=${file##*/.} version=${version%.jinfo}
-    versions+=("$version")
-    done
-    if (( ${#versions[@]} == 0 )); then
-    printf >&2 'No java installed\n'
-    return 1
-    fi
-    select version in "${versions[@]}"; do
-    if [[ -n $version ]]; then
-    export JAVA_HOME="/usr/lib/jvm/$version"
-    hash -p "$JAVA_HOME/bin/java" java
-    break
-    fi
-    done
-    type java
   - sudo apt-get update
   - sudo apt-get install openjdk-8-jdk
 #  - update-java-alternatives -l
