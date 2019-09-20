@@ -14,7 +14,8 @@ deploy:
     #secure: "mYKgfdVsgCiNpj/Zrtp5GBAdWyRd8Z7BJBN6b/mvEroIzJq7ZKWK9wKpZdgfG0EE6xc0iDB9tQficXsiuTkRl7kMFee7/sSMrDgqBVKMCMvhmMU4MC8r9M8cGROODDmzqSzcOPn3qCi1smfCnwmmPfCI8n5w3pmnAM85n4s/5rSGK6I3yjIYilEU551ppC9qvHpKoKF69oplPcZQ8ZYBUUvp2ljWxTvxf5eZIEoNWh0nNo5OEyG6TgMb2MGE7aQafOWYYFZ+VnWChE0ckB5s0U7JiZ8O3qCnPgLwNQZP/pzOq6MnTxApeQvAPAVzpmVlqcmK24lv34YBz9iZRspuaVAQ4NqfXOxlOkC2yVNgox+dg6/Fdhm6cSWK+pA2HeObcOaf4bm8YAO1kWWm72Sql8KJ6aOo36MS2zglznPSYFX4N2HJaQcLX47t1/tObug2kDrse/EnWiL5/pawjYmYVXxUARhTdKDG++tevds+KzPUsoOJGUIexQ/l5rg15U6LfcnNTZuHVv4Mx+R10xOTUgPCkITHK5yuWa5G2PaUvxNoul6KGksKFFM4853t1fNRWej8E0XmYPJO2tWdjLd3KBWCM0Iu7CvWNdIB70CPMVid0M6d8g9UXsRtNl8FR7w8riOFFXfkCcsq/+fj+E4C/OTGcUvlE+7keMY/pmPqYAU="
     secure: "$PYPI_PASSWORD_SECURE"
   skip_cleanup: true
-#  on:
+  on:
+    all_branches: true
 #    branch: master
 #after_success:
 #    - codecov
