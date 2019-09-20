@@ -1,13 +1,15 @@
-from distutils.core import setup
-import setuptools
+from setuptools import setup
 
 setup(name='cogroo_interface',
-      version='0.3.1',
+      version='0.3.3',
       description='Interface for accessing CoGrOO from Python scripts using py4j',
       author='Guilherme Passero',
       author_email='guilherme.passero0@gmail.com',
       url='https://github.com/kevencarneiro/cogroo4py',
       include_package_data=True,
+      # packages=['cogroo_interface'],
+      # package_dir={'cogroo_interface': 'cogroo_interface'},
+      # package_data={'cogroo_interface': ['cogroo4py.jar']},
       py_modules=['cogroo_interface'],
       install_requires=['py4j', 'retry'],
       keywords=['cogroo'],
