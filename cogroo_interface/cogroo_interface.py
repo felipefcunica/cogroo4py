@@ -416,6 +416,7 @@ class Cogroo:
         synchunk.update({"xxx": "outro"})
         return synchunk
 
+
 def main():
     cogroo = Cogroo.Instance()
     print(cogroo.lemmatize('o entendimento das metas propostas oferece uma interessante oportunidade para ' +
