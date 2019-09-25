@@ -3,11 +3,13 @@ python:
   - 3.6
 jdk:
   - openjdk8
+before_install:
+  - update-java-alternatives --list
+  - sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64
+  - java -version
 install:
   - pip install pytest-cov pytest
 script:
-  - update-java-alternatives --list
-  - java -version
   - python setup.py install
   - py.test --cov-report term --cov=cogroo_interface
 deploy:
