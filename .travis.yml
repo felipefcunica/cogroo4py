@@ -6,9 +6,9 @@ jdk:
 before_install:
   - java -version
 install:
-  - pip install pytest-cov pytest
+  - pip3 install pytest-cov pytest
 script:
-  - python setup.py install
+  - python3 setup.py install
   - py.test --cov-report term --cov=cogroo_interface
 deploy:
   provider: pypi
