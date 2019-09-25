@@ -5,11 +5,10 @@ python:
   - 3.6.7
 before_install:
   - pyenv shell 3.6.7
-  - java -version
 install:
-  - pip3 install pytest-cov pytest
+  - pip install pytest-cov pytest
 script:
-  - python3 setup.py install
+  - python setup.py install
   - py.test --cov-report term --cov=cogroo_interface
 deploy:
   provider: pypi
