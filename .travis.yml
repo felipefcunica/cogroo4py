@@ -20,6 +20,6 @@ deploy:
 #    all_branches: true
     branch: master
 after_success:
-    - codecov
+  - codecov
 notifications:
   email: false
