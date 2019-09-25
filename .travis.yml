@@ -1,7 +1,10 @@
 language: java
 jdk:
   - openjdk8
+python:
+  - 3.6.7
 before_install:
+  - pyenv shell 3.6.7
   - java -version
 install:
   - pip3 install pytest-cov pytest
