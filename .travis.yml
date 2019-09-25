@@ -1,12 +1,15 @@
 language: python
 python:
   - 3.6
+addons:
+  apt:
+    packages:
+      - oracle-java8-set-default
 install:
   - pip install pytest-cov pytest
 script:
-  - echo "skipping default script"
-#  - python setup.py install
-#  - py.test --cov-report term --cov=cogroo_interface
+  - python setup.py install
+  - py.test --cov-report term --cov=cogroo_interface
 deploy:
   provider: pypi
   user: "$PYPI_USER"
@@ -14,9 +17,9 @@ deploy:
     secure: "$PYPI_PASSWORD_SECURE"
   skip_cleanup: true
   on:
-    all_branches: true
-#    branch: master
-#after_success:
-#    - codecov
+#    all_branches: true
+    branch: master
+after_success:
+    - codecov
 notifications:
   email: false
