@@ -3,11 +3,14 @@ python:
   - 3.6
 addons:
   apt:
+    sources:
+      - sourceline: 'ppa:webupd8team/java'
     packages:
       - oracle-java8-set-default
 install:
   - pip install pytest-cov pytest
 script:
+  - java -version
   - python setup.py install
   - py.test --cov-report term --cov=cogroo_interface
 deploy:
