@@ -4,7 +4,7 @@ python:
 jdk:
   - openjdk8
 before_install:
-  - sudo update-java-alternatives --set /usr/lib/jvm/java-1.8.0-openjdk-amd64
+  - jdk_switcher use openjdk8
   - java -version
 install:
   - pip install pytest-cov pytest
