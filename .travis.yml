@@ -4,7 +4,6 @@ python:
 jdk:
   - openjdk8
 before_install:
-  - jdk_switcher use openjdk8
   - java -version
 install:
   - pip install pytest-cov pytest
