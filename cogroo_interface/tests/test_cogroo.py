@@ -5,7 +5,7 @@ from cogroo_interface import Cogroo
 
 class TestCogroo(unittest.TestCase):
     def test_lemmatize(self):
-        cogroo = Cogroo()
+        cogroo = Cogroo.Instance()
         phrase_to_lemmatize = 'o entendimento das metas propostas oferece uma interessante oportunidade para verificação ' \
                             'do impacto na agilidade decisória '
         expected_result = 'o entender de o meta propor oferecer um interessante oportunidade para verificação de o ' \
@@ -13,6 +13,6 @@ class TestCogroo(unittest.TestCase):
         self.assertEqual(expected_result, cogroo.lemmatize(phrase_to_lemmatize))
 
     def test_mistakes():
-        cogroo = Cogroo()
+        cogroo = Cogroo.Instance()
         doc = cogroo.grammar_check('Elas são bonita')
         self.assertTrue(doc.mistakes)
