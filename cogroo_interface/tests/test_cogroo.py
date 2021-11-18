@@ -12,7 +12,10 @@ class TestCogroo(unittest.TestCase):
                         'impacto em o agilidade decisório'
         self.assertEqual(expected_result, cogroo.lemmatize(phrase_to_lemmatize))
 
-    def test_mistakes():
+    def test_mistakes(self):
         cogroo = Cogroo.Instance()
         doc = cogroo.grammar_check('Elas são bonita')
         self.assertTrue(doc.mistakes)
+
+if __name__ == '__main__':
+    unittest.main()
